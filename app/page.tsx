@@ -12,27 +12,16 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post("/api/auth/login", {
-        email,
-        password,
-      });
-
-      if (response.status === 200) {
-        Swal.fire({
-          icon: "success",
-          title: "Login Berhasil",
-        }).then(() => {
-          window.location.href = '/dashboard'
-        });
-      }
-    } catch (error) {
+    await axios.post("/api/auth/login", {
+      email,
+      password,
+    }).catch((error) => {
       Swal.fire({
         icon: "error",
         title: "Login Gagal",
-        text: (error as Error).message,
+        text: error.response.data.error,
       })
-    }
+    });
   };
 
   return (
