@@ -93,7 +93,7 @@ export default function RegisterPage() {
 
                 <p className="text-center text-sm text-slate-600">
                     <Link
-                        href="/login"
+                        href="/"
                         className="font-medium text-slate-800 hover:underline"
                     >
                         Login

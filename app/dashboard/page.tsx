@@ -22,7 +22,7 @@ export default function DashboardPage() {
     const handleLogout = async () => {
         try {
             await axios.post('/api/auth/logout');
-            window.location.href = '/login';
+            window.location.href = '/';
         } catch (error) {
             console.error(error);
         }
