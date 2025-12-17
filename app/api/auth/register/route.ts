@@ -18,6 +18,8 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: error.message }, { status: 400 })
         }
 
+        await supabase.auth.signOut();
+
         return NextResponse.json({ message: "Account created successfully!" }, { status: 200 });
     } catch (error) {
         return NextResponse.json({ error: (error as Error).message }, { status: 500 });
