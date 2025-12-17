@@ -15,6 +15,8 @@ export default function LoginPage() {
     await axios.post("/api/auth/login", {
       email,
       password,
+    }).then(() => {
+      window.location.href = "/dashboard";
     }).catch((error) => {
       Swal.fire({
         icon: "error",
