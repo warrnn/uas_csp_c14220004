@@ -24,7 +24,7 @@ export default function RegisterPage() {
                     title: "Register Berhasil",
                     text: "Silahkan login untuk melanjutkan",
                 }).then(() => {
-                    window.location.href = '/login'
+                    window.location.href = '/'
                 });
             }
         } catch (error) {
